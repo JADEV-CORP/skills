@@ -1,0 +1,31 @@
+{
+  "name": "example",
+  "orgs": [
+    "your-org"
+  ],
+  "tokenCommand": [
+    "az",
+    "account",
+    "get-access-token",
+    "--tenant",
+    "<your-entra-tenant-id>",
+    "--resource",
+    "499b84ac-1321-427f-aa17-267ca6975798",
+    "--query",
+    "accessToken",
+    "-o",
+    "tsv"
+  ],
+  "language": "en",
+  "groups": null,
+  "assetRegisterCheck": false,
+  "outsideLookups": false,
+  "workRoot": "~/pr-reviews",
+  "instructions": null,
+  "brand": {
+    "name": "Your team",
+    "accent": "#1d4ed8",
+    "logo": null,
+    "robot": true
+  }
+}

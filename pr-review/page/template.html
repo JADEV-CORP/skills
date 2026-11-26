@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" data-theme="lavish-auto" data-lavish-annotate="off">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/inter@5.3.0/index.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@5.5.19/daisyui.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@5.5.19/themes.css">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.2.4/dist/index.global.js"></script>
+<style>
+  :is([data-theme="lavish"], [data-theme="lavish-dark"], [data-theme="lavish-auto"]) {
+    font-family: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+    --radius-selector: 0rem; --radius-field: 0rem; --radius-box: 0rem;
+    --size-selector: 0.25rem; --size-field: 0.25rem;
+    --border: 1px; --depth: 0; --noise: 0;
+    --card-p: 1rem;
+  }
+  /* Inter sits about a pixel low in a fixed-height control; a 2px bottom inset centres its text,
+     and inputs share the 1rem inset cards, alerts, and tables use, so text lines up down a page. */
+  :is([data-theme="lavish"], [data-theme="lavish-dark"], [data-theme="lavish-auto"]) :is(.btn, .badge, .kbd, .tab, .input, .select) {
+    padding-bottom: 2px;
+  }
+  :is([data-theme="lavish"], [data-theme="lavish-dark"], [data-theme="lavish-auto"]) :is(.input, .select) {
+    padding-inline: 1rem;
+  }
+  [data-theme="lavish"] {
+    color-scheme: light;
+    --color-base-100: oklch(1 0 0); --color-base-200: oklch(0.96 0.003 325.6);
+    --color-base-300: oklch(0.922 0.005 325.62); --color-base-content: oklch(0.145 0.008 326);
+    --color-primary: oklch(0.514 0.222 16.935); --color-primary-content: oklch(0.969 0.015 12.422);
+    --color-secondary: oklch(0.967 0.001 286.375); --color-secondary-content: oklch(0.21 0.006 285.885);
+    --color-accent: oklch(0.96 0.003 325.6); --color-accent-content: oklch(0.212 0.019 322.12);
+    --color-neutral: oklch(0.212 0.019 322.12); --color-neutral-content: oklch(0.985 0 0);
+    --color-info: oklch(0.6 0.12 240); --color-info-content: oklch(0.985 0 0);
+    --color-success: oklch(0.55 0.13 150); --color-success-content: oklch(0.985 0 0);
+    --color-warning: oklch(0.7 0.15 70); --color-warning-content: oklch(0.2 0.03 70);
+    --color-error: oklch(0.577 0.245 27.325); --color-error-content: oklch(0.985 0 0);
+  }
+  [data-theme="lavish-dark"] {
+    color-scheme: dark;
+    --color-base-100: oklch(0.145 0.008 326); --color-base-200: oklch(0.212 0.019 322.12);
+    --color-base-300: oklch(0.263 0.024 320.12); --color-base-content: oklch(0.985 0 0);
+    --color-primary: oklch(0.455 0.188 13.697); --color-primary-content: oklch(0.969 0.015 12.422);
+    --color-secondary: oklch(0.274 0.006 286.033); --color-secondary-content: oklch(0.985 0 0);
+    --color-accent: oklch(0.263 0.024 320.12); --color-accent-content: oklch(0.985 0 0);
+    --color-neutral: oklch(0.274 0.006 286.033); --color-neutral-content: oklch(0.985 0 0);
+    --color-info: oklch(0.7 0.12 240); --color-info-content: oklch(0.145 0.008 326);
+    --color-success: oklch(0.72 0.15 150); --color-success-content: oklch(0.145 0.008 326);
+    --color-warning: oklch(0.78 0.14 75); --color-warning-content: oklch(0.2 0.03 70);
+    --color-error: oklch(0.704 0.191 22.216); --color-error-content: oklch(0.145 0.008 326);
+  }
+  /* Follows the OS when opened on its own; inside Lavish it follows the editor's light or dark
+     mode and theme preset. */
+  [data-theme="lavish-auto"] {
+    color-scheme: light dark;
+    --color-base-100: light-dark(oklch(1 0 0), oklch(0.145 0.008 326)); --color-base-200: light-dark(oklch(0.96 0.003 325.6), oklch(0.212 0.019 322.12));
+    --color-base-300: light-dark(oklch(0.922 0.005 325.62), oklch(0.263 0.024 320.12)); --color-base-content: light-dark(oklch(0.145 0.008 326), oklch(0.985 0 0));
+    --color-primary: light-dark(oklch(0.514 0.222 16.935), oklch(0.455 0.188 13.697)); --color-primary-content: oklch(0.969 0.015 12.422);
+    --color-secondary: light-dark(oklch(0.967 0.001 286.375), oklch(0.274 0.006 286.033)); --color-secondary-content: light-dark(oklch(0.21 0.006 285.885), oklch(0.985 0 0));
+    --color-accent: light-dark(oklch(0.96 0.003 325.6), oklch(0.263 0.024 320.12)); --color-accent-content: light-dark(oklch(0.212 0.019 322.12), oklch(0.985 0 0));
+    --color-neutral: light-dark(oklch(0.212 0.019 322.12), oklch(0.274 0.006 286.033)); --color-neutral-content: oklch(0.985 0 0);
+    --color-info: light-dark(oklch(0.6 0.12 240), oklch(0.7 0.12 240)); --color-info-content: light-dark(oklch(0.985 0 0), oklch(0.145 0.008 326));
+    --color-success: light-dark(oklch(0.55 0.13 150), oklch(0.72 0.15 150)); --color-success-content: light-dark(oklch(0.985 0 0), oklch(0.145 0.008 326));
+    --color-warning: light-dark(oklch(0.7 0.15 70), oklch(0.78 0.14 75)); --color-warning-content: oklch(0.2 0.03 70);
+    --color-error: light-dark(oklch(0.577 0.245 27.325), oklch(0.704 0.191 22.216)); --color-error-content: light-dark(oklch(0.985 0 0), oklch(0.145 0.008 326));
+  }
+</style>
+<style>
+  .prr-tree ul { padding-left: 0.9rem; }
+  .prr-tree button { text-align: left; width: 100%; }
+  .prr-pane { min-width: 0; }
+  .prr-bar { position: sticky; bottom: 0; z-index: 10; }
+  .prr-card { font-family: "Inter Variable", ui-sans-serif, system-ui, sans-serif; white-space: normal; font-size: 0.875rem; line-height: 1.4; }
+  .prr-card textarea { font-family: inherit; }
+  #app { overflow-wrap: anywhere; }
+  [data-tab-panel][hidden] { display: none; }
+  .prr-robot .prr-eyes { transform-box: fill-box; transform-origin: center; animation: prr-blink 6s infinite; }
+  .prr-robot .prr-antenna { animation: prr-glow 3s ease-in-out infinite; }
+  @keyframes prr-blink { 0%, 95%, 100% { transform: scaleY(1); } 97% { transform: scaleY(0.1); } }
+  @keyframes prr-glow { 50% { opacity: 0.35; } }
+  @media (prefers-reduced-motion: reduce) { .prr-robot * { animation: none !important; } }
+</style>
+</head>
+<body class="min-h-screen bg-base-100 text-base-content antialiased">
+<div id="app" class="mx-auto max-w-7xl px-4 py-8 sm:px-6"></div>
+<noscript>This review page needs JavaScript.</noscript>
+<script type="application/json" id="review-data">{{DATA}}</script>
+<script type="module">{{APP}}</script>
+</body>
+</html>
