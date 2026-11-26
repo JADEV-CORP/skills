@@ -1,6 +1,6 @@
 ---
 name: pr-review
-description: Reviews an Azure DevOps pull request (bugs, gaps, story, breaking changes, licences, security) on a review page and posts only the comments the reviewer picks. Use when asked to review a PR or given a dev.azure.com pull request URL.
+description: "Reviews an Azure DevOps pull request (bugs, gaps, story, breaking changes, licences, security) on a review page and posts only the comments the reviewer picks. Use when asked to review a PR or given a dev.azure.com pull request URL."
 license: MIT
 metadata:
   argument-hint: <pull request URL>

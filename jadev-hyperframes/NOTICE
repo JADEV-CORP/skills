@@ -1,0 +1,23 @@
+jadev-hyperframes
+Copyright (c) 2026 JADEV-CORP
+Licensed under the MIT License (see LICENSE at the repository root).
+
+This skill documents the HyperFrames command-line tool (npm package
+"hyperframes", https://github.com/heygen-com/hyperframes), which is licensed
+under the Apache License, Version 2.0. No HyperFrames code is included here.
+
+The composition rules, attribute names, command names, flags and the
+project skeleton in references/composition.md were derived from the
+HyperFrames 0.9.98 package and its bundled documentation (Apache-2.0),
+then checked by running the 0.9.98 CLI. The text was rewritten, not copied.
+
+Changes made relative to that documentation:
+- Rewritten in our own words and reduced to the rules we use.
+- Telemetry, usage beacons, feedback submissions, uploads, cloud rendering
+  and self-update are turned off or excluded.
+- The CLI is run from a pinned local install (npx --no), never fetched
+  at runtime.
+- Scripts and fonts are vendored into the project so renders stay offline.
+
+A copy of the Apache License 2.0 is available at
+https://www.apache.org/licenses/LICENSE-2.0

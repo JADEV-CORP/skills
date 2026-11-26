@@ -1,6 +1,6 @@
 ---
 name: integration-tests
-description: Writes integration tests that run the app against real databases, brokers and HTTP fakes in throwaway containers (.NET first, Node, Java, Python, Go noted). Use when adding or fixing API, repository or messaging tests, or setting up Testcontainers.
+description: "Writes integration tests that run the app against real databases, brokers and HTTP fakes in throwaway containers (.NET first, Node, Java, Python, Go noted). Use when adding or fixing API, repository or messaging tests, or setting up Testcontainers."
 license: MIT
 ---
 

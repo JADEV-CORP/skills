@@ -1,6 +1,6 @@
 ---
 name: product-feature-estimation
-description: Estimates features from the real codebase. Slices the work, gives ranges with stated confidence, lists assumptions and hidden work, and forecasts from the team's own history when it exists. Use for sizing, story points, roadmap or quote estimates.
+description: "Estimates features from the real codebase. Slices the work, gives ranges with stated confidence, lists assumptions and hidden work, and forecasts from the team's own history when it exists. Use for sizing, story points, roadmap or quote estimates."
 license: MIT
 ---
 

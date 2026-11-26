@@ -1,0 +1,45 @@
+# Generic leak patterns for check-skill.py --ban-file.
+# One Python regular expression per line, matched case-insensitively.
+# Real names (people, clients, internal hosts) go in a private file outside
+# the repository, passed as a second --ban-file.
+
+# Home folders and machine paths
+/Users/[A-Za-z0-9._-]+/
+/home/[A-Za-z0-9._-]+/
+\b[A-Z]:\\Users\\
+
+# Email addresses, except example domains. The letters-only ending skips
+# package@version specifiers such as name@1.2.3.
+[\w.+-]+@(?!example\.(?:com|org|net)\b)[\w-]+(?:\.[\w-]+)*\.[A-Za-z]{2,}\b
+
+# GUIDs (tenant, subscription, object IDs), except the all-zero placeholder
+\b(?!0{8}-0{4})[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b
+
+# Long hex strings: keys, hashes used as IDs
+\b[0-9a-f]{32,}\b
+
+# Phone numbers in international format
+\+\d{1,3}[ .]?\(?\d{1,4}\)?(?:[ .]?\d{2,4}){2,4}\b
+
+# IBAN
+\b[A-Z]{2}\d{2}(?: ?[A-Z0-9]{4}){3,7}\b
+
+# Prices and rates
+\b\d[\d.,']*\s?(?:EUR|USD|CHF|GBP)\b
+(?:€|£|US\$)\s?\d
+\$\d{2,}
+
+# Keys and tokens
+AKIA[0-9A-Z]{16}
+\bgh[pousr]_[A-Za-z0-9]{30,}
+\bxox[abprs]-[A-Za-z0-9-]{10,}
+BEGIN [A-Z ]*PRIVATE KEY
+\beyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}
+AccountKey=[A-Za-z0-9+/=]{20,}
+\bsig=[A-Za-z0-9%]{20,}
+(?:api[_-]?key|secret|password|passwd|token)\s*[:=]\s*["']?[A-Za-z0-9_+/=-]{12,}
+
+# Organization names in Azure DevOps URLs, internal host suffixes
+dev\.azure\.com/(?![<{])[A-Za-z0-9-]+
+\b[A-Za-z0-9-]+\.visualstudio\.com
+\b[\w-]+\.(?:internal|corp|intra|lan)\b
