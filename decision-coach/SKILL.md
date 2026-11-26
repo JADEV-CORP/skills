@@ -14,7 +14,7 @@ Load [decision-method.md](references/decision-method.md) for every choice: optio
 
 ## Scenario routing
 
-Load the primary reference (in `references/`) before answering. Load the secondary only when the challenge crosses domains.
+Load the primary reference first, the secondary only across domains. To raise the bar, use [aim-higher.md](references/aim-higher.md).
 
 | Scenario | Keywords | Primary | Secondary |
 |---|---|---|---|
